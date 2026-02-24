@@ -24,7 +24,11 @@ int main(){
     int input_val;
     while(input_val != 3){
         std::cout << "What conversion do you want to do?\n\t1. Miles --> Kilometers\n\t2. Kilometers --> Miles\n\t3. Exit\n";
-        std::cin >> input_val;
+        if (!(std::cin >> input_val)){
+            std::cin.clear();
+            std::cin.ignore();
+            std::cout << "CLEAR";
+        }
         if (input_val == 1){
             int miles;
             std::cout << "Enter the number of miles you want to convert: ";
