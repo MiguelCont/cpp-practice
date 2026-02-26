@@ -21,13 +21,10 @@ int getOperation(){
     bool valid = false;
     int result = 0;
     while(!valid){
-        cout << "What operation would you like to perform (Enter exit to exit)?\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n";
+        cout << "What operation would you like to perform?\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\n";
         string input;
         cin >> input;
 
-        if(input == "exit"){
-            return 5; //exit condition
-        }
         try{
             result = std::stoi(input);
             switch (result)
@@ -36,7 +33,7 @@ int getOperation(){
             case 2:
             case 3:
             case 4:
-                cout << result << "\n";
+            case 5:
                 valid = true;
                 break;
             
